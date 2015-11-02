@@ -29,12 +29,33 @@ fi
 <p>git diff: Show differences between your working directory and the staging index.</p>
 <p>git diff –staged: Show differences between the index and the most recent commit.</p>
 <p>git diff HEAD: Show the differences between your working directory and the most recent commit.</p>
+  
+<h3>Useful Git aliases</h3>
+
+<h4><pre>$ git config --global alias.logline "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"</pre>
+  
+<pre>$ git config --global alias.slog "log --pretty=oneline --abbrev-commit"</pre>
+<pre>$ git slog</pre></h4>
+<pre>1fa0979 HEAD pointer
+982a86b added p tag
+a2e83d8 added p tag</pre>
 
 <h3>Git HEAD</h3>
 
 <p>cat .git/HEAD</p>
 <p>cat .git/refs/heads/master</p>
 <img src="images/logline-head.png" alt="HEAD">
+  
+<h3>Git Log</h3>
+<p>git log shows recent two logs</p>
+<h4>
+  <pre>$ git log --pretty="%h - %s" --author=Madhuri --since="2015-11-01"  -2</pre>
+  <pre>$ git log --pretty=format:"%h - %an, %ar : %s" -2</pre>
+</h4>
+<img src="images/git-log-2.png" alt="git log">
+  
+
+
 
 </body>
 
