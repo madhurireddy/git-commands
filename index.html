@@ -76,18 +76,26 @@ a2e83d8 added p tag</pre>
   <pre>$ git show --pretty="format:" --name-only bd61ad98</pre>
   <pre>$ git show --pretty="format:" b8386ca443..cd04d9e530</pre>
 </h4>
-<img src="images/git-show.png" alt="HEAD">
+<img src="images/git-show.png" alt="git show">
  
 <h3>Git Amend</h3>
-<img src="images/git-amend.png" alt="HEAD">
+<img src="images/git-amend.png" alt="git amend">
+
+<p>Also, if you commit and then realize you forgot to stage the changes in a file you wanted to add to this commit, you can do something like this:<p>
+
+<pre>$ git commit -m 'initial commit'
+$ git add forgotten_file
+$ git commit --amend</pre>
   
 <h3>Git Revert</h3>
-  <h4>
+<h4>
   <pre>$ git revert HEAD</pre>
   <pre>$ git revert cd04d9e530</pre>
   <pre>$ git revert HEAD --no-edit</pre>
 </h4>
-<img src="images/git-revert.png" alt="HEAD">
+<img src="images/git-revert.png" alt="git revert">
+  
+<p>Since we were undoing the very last commit we made, we were able to use HEAD as the argument to revert. We can revert any arbitrary commit earlier in history by simply specifying its hash value.</p>
   
 <h3>Git Show</h3>
   
