@@ -12,8 +12,20 @@
 
 <nav>
   <li><a href="#project-level-configs">Project level configs</a></li>
+  <li><a href="#record-changes">Record changes to repository</a></li>
+  <li><a href="#auto-completion">Auto Completion</a></li>
+  <li><a href="#git-diff">Git Diff</a></li>
+  <li><a href="#git-aliases">Git Aliases</a></li>
+  <li><a href="#git-head">Git HEAD</a></li>
+  <li><a href="#git-log">Git Log</a></li>
   <li><a href="#git-merge">Git Merge</a></li>
   <li><a href="#git-show">Git Show</a></li>
+  <li><a href="#git-amend">Git Amend</a></li>
+  <li><a href="#git-revert">Git Revert</a></li>
+  <li><a href="#git-reset">Git Reset</a></li>
+  <li><a href="#git-stash">Git Stash</a></li>
+  <li><a href="#git-patch">Git Patch</a></li>
+  <li><a href="#git-cherry-pick">Git Cherry Pick</a></li>
   <li><a href="#merge-diff-tool">Merge/Diff tool</a></li>
 </nav>
   
@@ -24,13 +36,13 @@
 <h4><pre>$ git config user.name "somename"
 $ git config user.email someone@somemail.com</pre></h4>
   
-<h3>Record changes to repository</h3>
+<div id="record-changes"><h3>Record changes to repository</h3></div>
 <p>
 As you edit files, Git sees them as modified, because you’ve changed them since your last commit. You stage these modified files and then commit all your staged changes, and the cycle repeats.
 </p>
 <div class="image_container"><img src="images/three-tier-architecture.png" alt="three tier architecture"></div>
   
-<h3>Auto Completion</h3>
+<div id="auto-completion"><h3>Auto Completion</h3></div>
 <p>
 To add git auto completion do the following steps.
 </p>
@@ -44,7 +56,7 @@ if [ -f ~/.git-completion.bash ]; then
   source ~/.git-completion.bash
 fi
 </pre>
-<h3>Git Diff</h3>
+<div id="git-diff"><h3>Git Diff</h3></div>
 <p>git diff belows diffs origin and local</p>
 <p><img src="images/diff-origin-master.png" alt="diff with origin/master"></p>
   
@@ -56,7 +68,7 @@ fi
 <p>git diff –staged: Show differences between the index and the most recent commit.</p>
 <p>git diff HEAD: Show the differences between your working directory and the most recent commit.</p>
   
-<h3>Some Git aliases</h3>
+<div id="git-aliases"><h3>Git Aliases</h3></div>
 
 <h4><pre>$ git config --global alias.logline "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"</pre>
   
@@ -66,13 +78,13 @@ fi
 982a86b added p tag
 a2e83d8 added p tag</pre>
 
-<h3>Git HEAD</h3>
+<div id="git-head"><h3>Git HEAD</h3></div>
 
 <p>cat .git/HEAD</p>
 <p>cat .git/refs/heads/master</p>
 <p><img src="images/logline-head.png" alt="HEAD"></p>
   
-<h3>Git Log</h3>
+<div id="git-log"><h3>Git Log</h3></div>
 <p>git log shows recent two logs</p>
 <h4>
   <pre>$ git log --pretty="%h - %s" --author=Madhuri --since="2015-11-01"  -2</pre>
@@ -104,7 +116,7 @@ a2e83d8 added p tag</pre>
 </h4>
 <p><img src="images/git-show.png" alt="git show"></p>
  
-<h3>Git Amend</h3>
+  <div id="git-amend"><h3>Git Amend</h3></div>
 <p><img src="images/git-amend.png" alt="git amend"></p>
 
 <p>Also, if you commit and then realize you forgot to stage the changes in a file you wanted to add to this commit, you can do something like this:<p>
@@ -113,7 +125,7 @@ a2e83d8 added p tag</pre>
 $ git add forgotten_file
 $ git commit --amend</pre>
   
-<h3>Git Revert</h3>
+<div id="git-revert"><h3>Git Revert</h3></div>
 <h4>
   <pre>$ git revert HEAD</pre>
   <pre>$ git revert cd04d9e530</pre>
@@ -123,7 +135,7 @@ $ git commit --amend</pre>
   
 <p>Since we were undoing the very last commit we made, we were able to use HEAD as the argument to revert. We can revert any arbitrary commit earlier in history by simply specifying its hash value.</p>
   
-<h3>Git Reset</h3>
+<div id="git-reset"><h3>Git Reset</h3></div>
 <pre>git reset
 --soft - does not change the staging index or the working copy, only changes the repo, most recent changes are in staging and working copy
 --mixed(default) - repo and staging index only
@@ -132,7 +144,7 @@ $ git commit --amend</pre>
 <p><img src="images/git-reset-soft.png" alt="git revert"></p>
 <p><img src="images/git-reset-hard.png" alt="git revert"></p>
   
-<h3>Git Rebase</h3>
+<div id="git-rebase"><h3>Git Rebase</h3></div>
 <p>The primary reason for rebasing is to maintain a linear project history.</p>
 <p>There are two options for integrating a feature into the master branch: merging directly or rebasing and then merging. The former option results in a 3-way merge and a merge commit, while the latter results in a fast-forward merge and a perfectly linear history.</p>
 <p>It is also used to squash commits, split commits, change commit message or add/remove files in commit, switch the order of commits</p>  
@@ -160,14 +172,14 @@ would be:
 
   
   
-<h3>Git Cherry-Pick</h3>
+<div id="git-cherry-pick"><h3>Git Cherry-Pick</h3></div>
 <p>Git cherry-pick behaves just like merge. If git can’t apply the changes (e.g. you get merge conflicts), git leaves you to resolve the conflicts manually and make the commit yourself.</p>
 <p><img src="images/git-cherry-pick1.png" alt="git cherry pick 1"></p>
 <p><img src="images/git-cherry-pick2.png" alt="git cherry pick 2"></p>
  
-<h3>Git Stash</h3>
+<div id="git-stash"><h3>Git Stash</h3></div>
   
-<h3>Git Patch</h3>
+<div id="git-patch"><h3>Git Patch</h3></div>
 <p>To create a patch from the last two commits in one branch(master) and correctly apply this patch to another(gh-pages) repository, do the following:</p>
   
 <h4>
