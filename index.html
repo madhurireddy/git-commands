@@ -9,14 +9,17 @@
 <body>
 <h1>Git Commands</h1>
 <h3>Git project level configs</h3>
+<p>Local config will be in your repository's .git/config file.</p>
+<p><img src="images/git-project-configs.png" alt="Git configs - project level"></p>
+
 <h4><pre>$ git config user.name "Madhuri Reddy"
-$ git config user.email madhurireddy12@yahoo.com</pre></h4>
+$ git config user.email madhuri@gmail.com</pre></h4>
   
 <h3>Record changes to repository</h3>
 <p>
 As you edit files, Git sees them as modified, because you’ve changed them since your last commit. You stage these modified files and then commit all your staged changes, and the cycle repeats.
 </p>
-<div><img src="images/three-tier-architecture.png" alt="three tier architecture"></div>
+<div class="image_container"><img src="images/three-tier-architecture.png" alt="three tier architecture"></div>
   
 <h3>Auto Completion</h3>
 <p>
@@ -34,7 +37,7 @@ fi
 </pre>
 <h3>Git Diff</h3>
 <p>git diff belows diffs origin and local</p>
-<img src="images/diff-origin-master.png" alt="diff with origin/master">
+<p><img src="images/diff-origin-master.png" alt="diff with origin/master"></p>
   
 <p>If we want to diff the changes to a file in a branch to the file in master branch:</p>
 <p>04:16 PM /Users/madhuridevidi/html5/foundations/git-commands gh-pages</p>
@@ -58,7 +61,7 @@ a2e83d8 added p tag</pre>
 
 <p>cat .git/HEAD</p>
 <p>cat .git/refs/heads/master</p>
-<img src="images/logline-head.png" alt="HEAD">
+<p><img src="images/logline-head.png" alt="HEAD"></p>
   
 <h3>Git Log</h3>
 <p>git log shows recent two logs</p>
@@ -66,7 +69,7 @@ a2e83d8 added p tag</pre>
   <pre>$ git log --pretty="%h - %s" --author=Madhuri --since="2015-11-01"  -2</pre>
   <pre>$ git log --pretty=format:"%h - %an, %ar : %s" -2</pre>
 </h4>
-<img src="images/git-log-2.png" alt="git log">
+<p><img src="images/git-log-2.png" alt="git log"></p>
   
 <h4>
   <pre>git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short</pre>
@@ -90,10 +93,10 @@ a2e83d8 added p tag</pre>
   <pre>$ git show --pretty="format:" --name-only bd61ad98</pre>
   <pre>$ git show --pretty="format:" b8386ca443..cd04d9e530</pre>
 </h4>
-<img src="images/git-show.png" alt="git show">
+<p><img src="images/git-show.png" alt="git show"></p>
  
 <h3>Git Amend</h3>
-<img src="images/git-amend.png" alt="git amend">
+<p><img src="images/git-amend.png" alt="git amend"></p>
 
 <p>Also, if you commit and then realize you forgot to stage the changes in a file you wanted to add to this commit, you can do something like this:<p>
 
@@ -107,7 +110,7 @@ $ git commit --amend</pre>
   <pre>$ git revert cd04d9e530</pre>
   <pre>$ git revert HEAD --no-edit</pre>
 </h4>
-<img src="images/git-revert.png" alt="git revert">
+<p><img src="images/git-revert.png" alt="git revert"></p>
   
 <p>Since we were undoing the very last commit we made, we were able to use HEAD as the argument to revert. We can revert any arbitrary commit earlier in history by simply specifying its hash value.</p>
   
@@ -184,7 +187,7 @@ resolving merge conflicts: $ git mergetool [<path>...]</pre>
 <h4>
   <pre>$ git difftool</pre>
 </h4>
-<p><img src="images/p4merge.png" alt="p4merge"></p>
+<p><div class="image_container1"><img src="images/p4merge.png" alt="p4merge"></div></p>
 <h4>
   <pre>$ git mergetool</pre>
 </h4>
@@ -197,7 +200,7 @@ MERGE_RESULT – the file resulting from the merge where you resolve conflicts</
   
 
 <p>This will open P4Merge and show three different versions of the file; your local version, the version you are trying to merge in (probably the master branch) and the base version. The base version is the common ancestor of the local version and the remote version.</p> 
-<p><img src="images/3way-merge.png" alt="3 way merge"></p>
+<p><div class="image_container1"><img src="images/3way-merge.png" alt="3 way merge"></div></p>
 
   
 </body>
