@@ -1,0 +1,51 @@
+From 49054821ef72189c67032b182126c1d677d15ef3 Mon Sep 17 00:00:00 2001
+From: Madhuri Reddy <madhuri.devidi@gmail.com>
+Date: Tue, 3 Nov 2015 09:56:16 -0800
+Subject: [PATCH 1/2] added div style for the three-tier image
+
+---
+ styles/git-stylesheet.css | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/styles/git-stylesheet.css b/styles/git-stylesheet.css
+index c85a9e0..ed3e5a4 100644
+--- a/styles/git-stylesheet.css
++++ b/styles/git-stylesheet.css
+@@ -2,3 +2,8 @@ h4 {
+   background-color: #00ff00;
+   display: inline-block;
+ }
++div {
++    width: 500px;
++    height: 500px;
++    border: 3px solid #8AC007;
++}
+-- 
+2.3.2 (Apple Git-55)
+
+
+From 9a77d23bc1b7676b036a403bef451cfc06e4b899 Mon Sep 17 00:00:00 2001
+From: Madhuri Reddy <madhuri.devidi@gmail.com>
+Date: Tue, 3 Nov 2015 09:57:51 -0800
+Subject: [PATCH 2/2] added div html for the three-tier image
+
+---
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/index.html b/index.html
+index 47c72a8..6495f96 100644
+--- a/index.html
++++ b/index.html
+@@ -16,7 +16,7 @@ $ git config user.email madhurireddy12@yahoo.com</pre></h4>
+ <p>
+ As you edit files, Git sees them as modified, because you’ve changed them since your last commit. You stage these modified files and then commit all your staged changes, and the cycle repeats.
+ </p>
+-<img src="images/three-tier-architecture.png" alt="three tier architecture">
++<div><img src="images/three-tier-architecture.png" alt="three tier architecture"></div>
+   
+ <h3>Auto Completion</h3>
+ <p>
+-- 
+2.3.2 (Apple Git-55)
+

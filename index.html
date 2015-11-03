@@ -156,14 +156,30 @@ would be:
 <h3>Git Stash</h3>
   
 <h3>Git Patch</h3>
+<p>To create a patch from the last two commits in one branch(master) and correctly apply this patch to another(gh-pages) repository, do the following:</p>
+  
+<h4>
+  <pre>$ $ git format-patch gh-pages --stdout > fix-three-tier-image-style.patch</pre>
+  <pre>$ git apply --stat fix-three-tier-image-style.patch</pre>
+  <pre>$ git apply --check fix-three-tier-image-style.patch</pre>
+</h4>
+
+<p><img src="images/git-patch-1.png" alt="git patch 1"></p>
+<p><img src="images/git-patch-2.png" alt="git patch 2"></p>
+<p><img src="images/git-patch-3.png" alt="git patch 3"></p>
+<p><img src="images/git-patch-4.png" alt="git patch 4"></p>
+  
+  
   
 <h3>Merge tool/Diff tool</h3>
 
   
 <p><img src="images/difftool-mergetool.png" alt="difftool mergetool"></p>
 
-comparing branches/sha1s content: $ git difftool A..B [<path>...]
-resolving merge conflicts: $ git mergetool [<path>...]
+<h4>
+  <pre>comparing branches/sha1s content: $ git difftool A..B [<path>...]
+resolving merge conflicts: $ git mergetool [<path>...]</pre>
+</h4>
 
 <h4>
   <pre>$ git difftool</pre>
@@ -172,15 +188,15 @@ resolving merge conflicts: $ git mergetool [<path>...]
 <h4>
   <pre>$ git mergetool</pre>
 </h4>
-  4-pane merge tools show you these panes:
+<pre>4-pane merge tools show you these panes:
 
 LOCAL – your file with the changes you’ve made to it
 BASE – the common ancestor file that LOCAL and REMOTE came from
 REMOTE – the file you’re merging in, possibly authored by someone else
-MERGE_RESULT – the file resulting from the merge where you resolve conflicts
+MERGE_RESULT – the file resulting from the merge where you resolve conflicts</pre>
   
 
-This will open P4Merge and show three different versions of the file; your local version, the version you are trying to merge in (probably the master branch) and the base version. The base version is the common ancestor of the local version and the remote version. 
+<p>This will open P4Merge and show three different versions of the file; your local version, the version you are trying to merge in (probably the master branch) and the base version. The base version is the common ancestor of the local version and the remote version.</p> 
 <p><img src="images/3way-merge.png" alt="3 way merge"></p>
 
   
