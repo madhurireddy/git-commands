@@ -107,17 +107,50 @@ $ git commit --amend</pre>
 --mixed(default) - repo and staging index only
 --hard - changes the repo, cages the staging index and working copy</pre>
   
-<img src="images/git-reset-soft.png" alt="git revert">
-<img src="images/git-reset-hard.png" alt="git revert">
+<p><img src="images/git-reset-soft.png" alt="git revert"></p>
+<p><img src="images/git-reset-hard.png" alt="git revert"></p>
   
 <h3>Git Rebase</h3>
-  
-<h3>Git Cherry-Pick</h3>
+<p>The primary reason for rebasing is to maintain a linear project history.</p>
+<p>There are two options for integrating a feature into the master branch: merging directly or rebasing and then merging. The former option results in a 3-way merge and a merge commit, while the latter results in a fast-forward merge and a perfectly linear history.</p>
+<p>It is also used to squash commits, split commits, change commit message or add/remove files in commit,switch the order of commits</p>  
 
+<h3>Git Cherry-Pick</h3>
+<p>Git cherry-pick behaves just like merge. If git can’t apply the changes (e.g. you get merge conflicts), git leaves you to resolve the conflicts manually and make the commit yourself.</p>
+<p><img src="images/git-cherry-pick1.png" alt="git cherry pick 1"></p>
+<p><img src="images/git-cherry-pick2.png" alt="git cherry pick 2"></p>
+ 
 <h3>Git Stash</h3>
   
 <h3>Git Patch</h3>
+  
+<h3>Merge tool/Diff tool</h3>
 
+  
+<p><img src="images/difftool-mergetool.png" alt="difftool mergetool"></p>
+
+comparing branches/sha1s content: $ git difftool A..B [<path>...]
+resolving merge conflicts: $ git mergetool [<path>...]
+
+<h4>
+  <pre>$ git difftool</pre>
+</h4>
+<p><img src="images/p4merge.png" alt="p4merge"></p>
+<h4>
+  <pre>$ git mergetool</pre>
+</h4>
+  4-pane merge tools show you these panes:
+
+LOCAL – your file with the changes you’ve made to it
+BASE – the common ancestor file that LOCAL and REMOTE came from
+REMOTE – the file you’re merging in, possibly authored by someone else
+MERGE_RESULT – the file resulting from the merge where you resolve conflicts
+  
+
+This will open P4Merge and show three different versions of the file; your local version, the version you are trying to merge in (probably the master branch) and the base version. The base version is the common ancestor of the local version and the remote version. 
+<p><img src="images/3way-merge.png" alt="3 way merge"></p>
+
+  
 </body>
 
 </html>
