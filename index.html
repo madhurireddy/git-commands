@@ -14,7 +14,9 @@
 
 
 <nav>
+  <li><a href="#github">Github account</a></li>
   <li><a href="#project-level-configs">Project level configs</a></li>
+  <li><a href="#create-repo">Project level configs</a></li>
   <li><a href="#record-changes">Record changes to repository</a></li>
   <li><a href="#auto-completion">Auto Completion</a></li>
   <li><a href="#git-diff">Git Diff</a></li>
@@ -26,18 +28,41 @@
   <li><a href="#git-amend">Git Amend</a></li>
   <li><a href="#git-revert">Git Revert</a></li>
   <li><a href="#git-reset">Git Reset</a></li>
+  <li><a href="#git-rebase">Git Rebase</a></li>
   <li><a href="#git-stash">Git Stash</a></li>
   <li><a href="#git-patch">Git Patch</a></li>
   <li><a href="#git-cherry-pick">Git Cherry Pick</a></li>
   <li><a href="#merge-diff-tool">Merge/Diff tool</a></li>
 </nav>
   
+<div id="github"><h3>Github Repo</h3></div>
+<pre>Go to github.com and create an account. It is free.
+Create a repo called git-commands. 
+Then from your computer you can <a href="http://git-scm.com/downloads">download and install git</a>. 
+Create a directory with the name you used for repo name.
+Set configs as shown below. These will be specific to a single repository.</pre>
+  
 <div id="project-level-configs"><h3>Project level configs</h3></div>
-<p>Local config will be in your repository's .git/config file.</p>
-<p><img src="images/git-project-configs.png" alt="Git configs - project level"></p>
 
 <h4><pre>$ git config user.name "somebody"
 $ git config user.email somebody@somebody.com</pre></h4>
+  
+<p>Local config will be in your repository's .git/config file. Global will be in ~/.gitconfig</p>
+<p><img src="images/git-project-configs.png" alt="Git configs - project level"></p>
+  
+
+<div id="create-repo"><h3>Create a new repository</h3></div>
+  
+<pre>
+From command line cd into the directory and do the following:
+ 
+echo "# comments" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/USERNAME/git-commands.git
+git push -u origin master
+</pre>
   
 <div id="record-changes"><h3>Record changes to repository</h3></div>
 <p>
