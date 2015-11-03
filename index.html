@@ -102,6 +102,10 @@ $ git commit --amend</pre>
 <p>Since we were undoing the very last commit we made, we were able to use HEAD as the argument to revert. We can revert any arbitrary commit earlier in history by simply specifying its hash value.</p>
   
 <h3>Git Reset</h3>
+<pre>git reset
+--soft - does not change the staging index or the working copy, only changes the repo, most recent changes are in staging and working copy
+--mixed(default) - repo and staging index only
+--hard - changes the repo, cages the staging index and working copy</pre>
   
 <h3>Git Rebase</h3>
   
