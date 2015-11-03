@@ -8,8 +8,16 @@
 
 <body>
 <h1>Git Commands</h1>
+<h3>Git project level configs</h3>
 <h4><pre>$ git config user.name "Madhuri Reddy"
-$ git config --global user.email madhurireddy12@yahoo.com</pre></h4>
+$ git config user.email madhurireddy12@yahoo.com</pre></h4>
+  
+<h3>Record changes to repository</h3>
+<p>
+As you edit files, Git sees them as modified, because you’ve changed them since your last commit. You stage these modified files and then commit all your staged changes, and the cycle repeats.
+</p>
+<img src="images/three-tier-architecture.png" alt="three tier architecture">
+  
 <h3>Auto Completion</h3>
 <p>
 To add git auto completion do the following steps.
@@ -115,8 +123,31 @@ $ git commit --amend</pre>
 <h3>Git Rebase</h3>
 <p>The primary reason for rebasing is to maintain a linear project history.</p>
 <p>There are two options for integrating a feature into the master branch: merging directly or rebasing and then merging. The former option results in a 3-way merge and a merge commit, while the latter results in a fast-forward merge and a perfectly linear history.</p>
-<p>It is also used to squash commits, split commits, change commit message or add/remove files in commit,switch the order of commits</p>  
+<p>It is also used to squash commits, split commits, change commit message or add/remove files in commit, switch the order of commits</p>  
 
+  
+<h4><pre>Assume the following history exists and the current branch is "topic":
+
+          A---B---C topic
+         /
+    D---E---F---G master
+From this point, the result of either of the following commands:
+
+$ git rebase master
+$ git rebase master topic
+would be:
+
+                  A'--B'--C' topic
+                 /
+    D---E---F---G master
+    
+</pre></h4>
+  
+<p><img src="images/git-rebase.png" alt="git rebase"></p>
+
+
+  
+  
 <h3>Git Cherry-Pick</h3>
 <p>Git cherry-pick behaves just like merge. If git can’t apply the changes (e.g. you get merge conflicts), git leaves you to resolve the conflicts manually and make the commit yourself.</p>
 <p><img src="images/git-cherry-pick1.png" alt="git cherry pick 1"></p>
