@@ -44,7 +44,8 @@ Set configs as shown below. These will be specific to a single repository.</pre>
   
 <div id="project-level-configs"><h3>Project level configs</h3></div>
 
-<h4><pre>$ git config user.name "somebody"
+<h4><pre>$ git init
+$ git config user.name "somebody"
 $ git config user.email somebody@somebody.com</pre></h4>
   
 <p>Local config will be in your repository's .git/config file. Global will be in ~/.gitconfig</p>
@@ -57,7 +58,6 @@ $ git config user.email somebody@somebody.com</pre></h4>
 From command line cd into the directory and do the following:
  
 echo "# comments" >> README.md
-git init
 git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/USERNAME/git-commands.git
@@ -85,16 +85,21 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 </pre>
 <div id="git-diff"><h3>Git Diff</h3></div>
-<p>git diff belows diffs origin and local</p>
+<p>git diff below diffs origin and local</p>
 <p><img src="images/diff-origin-master.png" alt="diff with origin/master"></p>
   
 <p>If we want to diff the changes to a file in a branch to the file in master branch:</p>
 <p>04:16 PM /Users/madhuridevidi/html5/foundations/git-commands gh-pages</p>
 <h4>$ git diff master -- index.html</h4>
 
-<p>git diff: Show differences between your working directory and the staging index.</p>
-<p>git diff –staged: Show differences between the index and the most recent commit.</p>
-<p>git diff HEAD: Show the differences between your working directory and the most recent commit.</p>
+<h4><pre>$ git diff
+Show differences between your working directory and the staging index.
+
+$ git diff –staged
+Show differences between the index and the most recent commit.
+
+$ git diff HEAD
+Show the differences between your working directory and the most recent commit.</pre></h4>
   
 <div id="git-aliases"><h3>Git Aliases</h3></div>
 
